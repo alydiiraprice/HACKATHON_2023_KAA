@@ -18,7 +18,7 @@ import HttpError from 'http-errors';
  * !! session tokens
  */
 export function authSignUp
-(email: string, nameFirst: string, nameLast: string, password: string, dob: Date, gender: string, medicalInfo: medicalDataType, ): userType {
+(email: string, nameFirst: string, nameLast: string, password: string, dob: Date, gender: string, medicalInfo: medicalDataType): userType {
   // ERROR CHECK
   // check if the email already exists - redirect user to login
   const data: data = getData();
@@ -77,6 +77,8 @@ export function authSignUp
   // create a unique token
   const token = String(Math.floor(Math.random() * 10000));
   const newToken: token = { token, username };
+  data.tokens.push(newToken);
+  setData(data);
 
   // return usertype
   return userType;
