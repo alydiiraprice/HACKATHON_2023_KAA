@@ -1,8 +1,12 @@
-export default function Profile() {
+import Module from '../components/MedicareModule'
+import { Center } from '@mantine/core';
+
+export default function Journey() {
     return (
       <>
-        <h1>PROFILE PAGE</h1>
+      <Module />
+       
       </>
     )
-  }
+}
   

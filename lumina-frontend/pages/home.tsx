@@ -1,7 +1,11 @@
-export default function Home() {
-  return (
-    <>
-      <h1>HOME PAGE</h1>
-    </>
-  )
+import {DashboardCard} from '../components/DashboardCard'
+
+export default function Journey() {
+    return (
+      <>
+      <DashboardCard />
+       
+      </>
+    )
 }
+  
