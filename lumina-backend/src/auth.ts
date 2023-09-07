@@ -68,6 +68,7 @@ export function authSignUp
     gender: gender,
     medicalInfo: medicalInfo,
     completedTasks: [],
+    incompleteTasks: [],
     userType: userType
   };
   data.users.push(newUser);

@@ -20,6 +20,7 @@ export type user = {
   gender: string,
   medicalInfo: medicalDataType,
   completedTasks: task[],
+  incompleteTasks: task[],
   userType: userType
 };
 
