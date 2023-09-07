@@ -1,9 +1,15 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { MantineProvider } from '@mantine/core';
+import { NavbarSimple } from '@/components/Navbar';
+import { useRouter } from 'next/router';
 
 export default function App(props: AppProps) {
   const { Component, pageProps } = props;
+
+  const router = useRouter();
+
+  const showNavbar = router.pathname !== "/";
 
   return (
     <>
@@ -20,6 +26,7 @@ export default function App(props: AppProps) {
           colorScheme: 'light',
         }}
       >
+        {showNavbar && <NavbarSimple />}
         <Component {...pageProps} />
       </MantineProvider>
     </>

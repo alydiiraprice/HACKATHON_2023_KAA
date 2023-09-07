@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router'
 import { createStyles, Navbar, Group, Code, getStylesRef, rem } from '@mantine/core';
 import {
   IconBellRinging,
@@ -10,6 +12,10 @@ import {
   IconReceipt2,
   IconSwitchHorizontal,
   IconLogout,
+  IconSmartHome,
+  IconRoad,
+  IconHeartHandshake,
+  IconUser
 } from '@tabler/icons-react';
 import { MantineLogo } from '@mantine/ds';
 
@@ -69,32 +75,35 @@ const useStyles = createStyles((theme) => ({
 }));
 
 const data = [
-  { link: '', label: 'Home', icon: IconBellRinging },
-  { link: '', label: 'Billing', icon: IconReceipt2 },
-  { link: '', label: 'Security', icon: IconFingerprint },
-  { link: '', label: 'SSH Keys', icon: IconKey },
-  { link: '', label: 'Databases', icon: IconDatabaseImport },
-  { link: '', label: 'Authentication', icon: Icon2fa },
-  { link: '', label: 'Other Settings', icon: IconSettings },
+  { link: '/home', label: 'Home', icon: IconSmartHome },
+  { link: '/journey', label: 'Journey', icon: IconRoad },
+  { link: '/services', label: 'Services', icon: IconHeartHandshake },
+  { link: '/profile', label: 'Profile', icon: IconUser },
 ];
 
 export function NavbarSimple() {
   const { classes, cx } = useStyles();
-  const [active, setActive] = useState('Billing');
+  const [active, setActive] = useState('');
+  const router = useRouter();
+
+  useEffect(() => {
+    // Update the active state based on the current route
+    const currentRoute = router.pathname;
+    setActive(currentRoute);
+  }, [router.pathname]); // Listen for changes in the route pathname
 
   const links = data.map((item) => (
-    <a
-      className={cx(classes.link, { [classes.linkActive]: item.label === active })}
+    <Link
+      className={cx(classes.link, { [classes.linkActive]: item.link === active })}
       href={item.link}
       key={item.label}
-      onClick={(event) => {
-        event.preventDefault();
-        setActive(item.label);
+      onClick={() => {
+        setActive(item.link);
       }}
     >
       <item.icon className={classes.linkIcon} stroke={1.5} />
       <span>{item.label}</span>
-    </a>
+    </Link>
   ));
 
   return (
@@ -102,17 +111,11 @@ export function NavbarSimple() {
       <Navbar.Section grow>
         <Group className={classes.header} position="apart">
           <MantineLogo size={28} />
-          <Code sx={{ fontWeight: 700 }}>v3.1.2</Code>
         </Group>
         {links}
       </Navbar.Section>
 
       <Navbar.Section className={classes.footer}>
-        <a href="#" className={classes.link} onClick={(event) => event.preventDefault()}>
-          <IconSwitchHorizontal className={classes.linkIcon} stroke={1.5} />
-          <span>Change account</span>
-        </a>
-
         <a href="#" className={classes.link} onClick={(event) => event.preventDefault()}>
           <IconLogout className={classes.linkIcon} stroke={1.5} />
           <span>Logout</span>
