@@ -24,6 +24,8 @@ export type user = {
 };
 
 // Badge
+// name = user type
+// not sure about category
 export type badge = {
   name: string,
   category: string
@@ -66,3 +68,5 @@ export type token = {
   token: string,
   username: string
 };
+
+export type empty = Record<string, never>;
