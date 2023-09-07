@@ -23,6 +23,11 @@ export function setMedicalInfo(medicalDataType: medicalDataType, username: strin
   return userInfo;
 }
 
+/**
+ * 
+ * @param username of the user
+ * @returns medical information of the user
+ */
 export function getMedicalInfo(username: string): medicalDataType {
   const data: data = getData();
   // check user exists 
