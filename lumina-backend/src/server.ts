@@ -7,6 +7,7 @@ import errorHandler from 'middleware-http-errors';
 // import getData and setData for data persistence
 import { getData, setData } from './dataStore';
 import { authLogin, authSignUp } from './auth';
+import { earnBadge, getCompletedTasks } from './task';
 
 // write a const fs for data persistence
 const fs = require('fs');
@@ -24,15 +25,27 @@ const PORT: number = parseInt(process.env.PORT || config.port);
 const HOST: string = process.env.IP || 'localhost';
 
 // authSignup
-app.post('/auth/signup', (req: Request, res: Response) => {
+app.post('/auth/authsignup', (req: Request, res: Response) => {
   const { email, nameFirst, nameLast, password, dob, gender, medicalInfo } = req.body;
   return res.json(authSignUp(email, nameFirst, nameLast, password, dob, gender, medicalInfo));
 });
 
 // authLogin
-app.post('/auth/login', (req: Request, res: Response) => {
+app.post('/auth/authlogin', (req: Request, res: Response) => {
   const { username, password } = req.body;
   return res.json(authLogin(username, password));
+});
+
+// earnBadge
+app.post('/task/earnbadge', (req: Request, res: Response, next) => {
+  const { date, category, username} = req.body;
+  return res.json(earnBadge(date, category, username));
+});
+
+// getCompletedTasks
+app.get('/task/getcompletedtasks', (req: Request, res: Response, next) => {
+  const username = String(req.query.username as string);
+  return res.json(getCompletedTasks(username));
 });
 
 
