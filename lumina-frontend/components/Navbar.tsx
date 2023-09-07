@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import LuminaLogo from './LuminaLogo';
 import Link from 'next/link';
 import { useRouter } from 'next/router'
 import { createStyles, Navbar, Group, Code, getStylesRef, rem } from '@mantine/core';
@@ -17,7 +18,6 @@ import {
   IconHeartHandshake,
   IconUser
 } from '@tabler/icons-react';
-import { MantineLogo } from '@mantine/ds';
 
 const useStyles = createStyles((theme) => ({
   header: {
@@ -110,7 +110,7 @@ export function NavbarSimple() {
     <Navbar  height={700} width={{ sm: 300 }} p="md">
       <Navbar.Section grow>
         <Group className={classes.header} position="apart">
-          <MantineLogo size={28} />
+          <LuminaLogo size={125} />
         </Group>
         {links}
       </Navbar.Section>

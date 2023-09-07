@@ -9,7 +9,7 @@ export default function App(props: AppProps) {
 
   const router = useRouter();
 
-  const showNavbar = router.pathname !== "/";
+  const showNavbar = (router.pathname !== "/" && router.pathname !== "/signup" && router.pathname !== "/login");
 
   return (
     <>
@@ -26,10 +26,10 @@ export default function App(props: AppProps) {
           colorScheme: 'light',
         }}
       >
-        <AppShell>
-          {showNavbar && <NavbarSimple />}
-          <Component {...pageProps} />
-        </AppShell>
+      <AppShell>
+        {showNavbar && <NavbarSimple />}
+        <Component {...pageProps} />
+      </AppShell>
       </MantineProvider>
     </>
   );

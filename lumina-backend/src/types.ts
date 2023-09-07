@@ -3,10 +3,12 @@
 export type data = {
   users: user[],
   badges: badge[],
-  userTypes: userType[]
+  userTypes: userType[],
+  tokens: token[]
 };
 
 // User of app
+// !! possibly remove the isolated 'username'
 export type user = {
   username: string,
   email: string,
@@ -28,7 +30,9 @@ export type badge = {
 };
 
 // userType package e.g. teen
+// !! could consider removing tasks
 export type userType = {
+  username: string,
   name: string,
   tasks: task[]
 };
@@ -56,4 +60,9 @@ export type task = {
   name: string,
   badge: badge,
   pageURL: string
+};
+
+export type token = {
+  token: string,
+  username: string
 };
