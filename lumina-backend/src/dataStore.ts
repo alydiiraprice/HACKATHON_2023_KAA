@@ -6,7 +6,8 @@ const fs = require('fs');
 let dataStore: data = {
   users: [],
   badges: [],
-  userTypes: []
+  userTypes: [],
+  tokens: []
 };
 
 // Use get() to access the data
