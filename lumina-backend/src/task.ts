@@ -85,3 +85,16 @@ export function getCompletedTasks(username: string): task[] {
   const tasks: task[] = findUser.completedTasks;
   return tasks;
 }
+
+export function getIncompleteTasks(username: string): task[] {
+  const data: data = getData();
+  // check user exists 
+  const users: user[] = data.users;
+  const findUser: user | undefined = users.find((u) => u.username === username);
+  if (findUser === undefined) {
+    throw HttpError(400, 'username is not a valid user');
+  }
+  // access their incompleted tasks
+  const tasks: task[] = findUser.incompleteTasks;
+  return tasks;
+}
