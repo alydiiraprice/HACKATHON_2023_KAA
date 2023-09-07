@@ -47,6 +47,32 @@ export function earnBadge(date: Date, category: string, username: string): empty
   return {};
 }
 
+/**
+ * 
+ * @param task that has been completed
+ * @param username of the user 
+ * @returns empty
+ */
+export function completeTask(task: task, username: string): empty {
+  const data: data = getData();
+  // ERROR CHECK
+  // check user is valid
+  const users: user[] = data.users;
+  const findUser: user | undefined = users.find((u) => u.username === username);
+  if (findUser === undefined) {
+    throw HttpError(400, 'username is not a valid user');
+  }
+  // push their completed task into the user's completed tasks
+  findUser.completedTasks.push(task);
+  setData(data);
+  return {};
+}
+
+/**
+ * 
+ * @param username of the user to list tasks
+ * @returns array of their completed tasks
+ */
 export function getCompletedTasks(username: string): task[] {
   const data: data = getData();
   // check user exists 

@@ -7,7 +7,7 @@ import errorHandler from 'middleware-http-errors';
 // import getData and setData for data persistence
 import { getData, setData } from './dataStore';
 import { authLogin, authSignUp } from './auth';
-import { earnBadge, getCompletedTasks } from './task';
+import { earnBadge, getCompletedTasks, completeTask } from './task';
 
 // write a const fs for data persistence
 const fs = require('fs');
@@ -48,6 +48,11 @@ app.get('/task/getcompletedtasks', (req: Request, res: Response, next) => {
   return res.json(getCompletedTasks(username));
 });
 
+// completeTask
+app.post('/task/completetask', (req: Request, res: Response, next) => {
+  const { task, username } = req.body;
+  return res.json(completeTask(task, username));
+});
 
 // -----
 
