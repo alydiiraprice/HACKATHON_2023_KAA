@@ -20,6 +20,9 @@ import {
 } from '@tabler/icons-react';
 
 const useStyles = createStyles((theme) => ({
+  navbar: {
+    top:0,
+  },
   header: {
     paddingBottom: theme.spacing.md,
     marginBottom: `calc(${theme.spacing.md} * 1.5)`,
@@ -107,7 +110,7 @@ export function NavbarSimple() {
   ));
 
   return (
-    <Navbar  height={700} width={{ sm: 300 }} p="md">
+    <Navbar className={classes.navbar} height={700} width={{ sm: 300 }} p="md">
       <Navbar.Section grow>
         <Group className={classes.header} position="apart">
           <LuminaLogo size={125} />
