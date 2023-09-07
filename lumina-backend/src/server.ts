@@ -6,6 +6,8 @@ import errorHandler from 'middleware-http-errors';
 
 // import getData and setData for data persistence
 import { getData, setData } from './dataStore';
+import { authLogin, authSignUp } from './auth';
+
 // write a const fs for data persistence
 const fs = require('fs');
 
@@ -21,6 +23,20 @@ app.use(morgan('dev'));
 const PORT: number = parseInt(process.env.PORT || config.port);
 const HOST: string = process.env.IP || 'localhost';
 
+// authSignup
+app.post('/auth/signup', (req: Request, res: Response) => {
+  const { email, nameFirst, nameLast, password, dob, gender, medicalInfo } = req.body;
+  return res.json(authSignUp(email, nameFirst, nameLast, password, dob, gender, medicalInfo));
+});
+
+// authLogin
+app.post('/auth/login', (req: Request, res: Response) => {
+  const { username, password } = req.body;
+  return res.json(authLogin(username, password));
+});
+
+
+// -----
 
 // start server
 const server = app.listen(PORT, HOST, () => {
