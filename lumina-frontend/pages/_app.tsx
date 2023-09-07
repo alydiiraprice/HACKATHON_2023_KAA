@@ -1,6 +1,6 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
-import { MantineProvider } from '@mantine/core';
+import { MantineProvider, AppShell } from '@mantine/core';
 import { NavbarSimple } from '@/components/Navbar';
 import { useRouter } from 'next/router';
 
@@ -9,7 +9,7 @@ export default function App(props: AppProps) {
 
   const router = useRouter();
 
-  const showNavbar = router.pathname !== "/";
+  const showNavbar = (router.pathname !== "/" && router.pathname !== "/signup" && router.pathname !== "/login");
 
   return (
     <>
@@ -24,10 +24,16 @@ export default function App(props: AppProps) {
         theme={{
           /** Put your mantine theme override here */
           colorScheme: 'light',
+          colors: {
+            brand: ['#F3F0FF', '#E5DBFF', '#D0BFFF', '#B197FC', '#9775FA', '#845EF7', '#7950F2', '#7048E8', '#6741D9', '#5F3DC4'],
+          },
+        primaryColor: 'brand', 
         }}
       >
+      <AppShell>
         {showNavbar && <NavbarSimple />}
         <Component {...pageProps} />
+      </AppShell>
       </MantineProvider>
     </>
   );

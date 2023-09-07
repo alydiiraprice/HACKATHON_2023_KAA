@@ -1,7 +1,11 @@
+import {ModuleCards} from '../components/AllModules'
+import { Center } from '@mantine/core';
+
 export default function Journey() {
     return (
       <>
-        <h1>JOURNEY PAGE</h1>
+      <ModuleCards />
+       
       </>
     )
 }
