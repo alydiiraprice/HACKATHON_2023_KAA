@@ -12,7 +12,7 @@ const useStyles = createStyles((theme) => ({
     alignItems: 'flex-start',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    backgroundColor: theme.colors.blue[6],
+    backgroundColor: theme.colors.violet[5],
   },
 
   carousel: {

@@ -11,14 +11,14 @@ import {
     rem,
   } from '@mantine/core';
   import { IconCheck } from '@tabler/icons-react';
-  import image from './../public/image.9a65bd94.svg';
+  import image from './../public/girl.svg';
   
   const useStyles = createStyles((theme) => ({
     inner: {
       display: 'flex',
       justifyContent: 'space-between',
       paddingTop: `calc(${theme.spacing.xl} * 4)`,
-      paddingBottom: `calc(${theme.spacing.xl} * 4)`,
+      paddingBottom: `calc(${theme.spacing.xl} * 2)`,
     },
   
     content: {
@@ -50,6 +50,7 @@ import {
     },
   
     image: {
+      marginTop:rem(50),
       flex: 1,
   
       [theme.fn.smallerThan('md')]: {
@@ -64,8 +65,12 @@ import {
       padding: `${rem(4)} ${rem(12)}`,
     },
   }));
+
+  interface name {
+    username:String
+  }
   
-  export function DashboardCard() {
+  export function DashboardCard({username}:name) {
     const { classes } = useStyles();
     return (
       <div>
@@ -73,12 +78,8 @@ import {
           <div className={classes.inner}>
             <div className={classes.content}>
               <Title className={classes.title}>
-                A <span className={classes.highlight}>modern</span> React <br /> components library
+                Welcome <span className={classes.highlight}>{username}</span> to your Lumina dashbaord
               </Title>
-              <Text color="dimmed" mt="md">
-                Build fully functional accessible web applications faster than ever – Mantine includes
-                more than 120 customizable components and hooks to cover you in any situation
-              </Text>
   
               <List
                 mt={30}
@@ -104,14 +105,6 @@ import {
                 </List.Item>
               </List>
   
-              <Group mt={30}>
-                <Button radius="xl" size="md" className={classes.control}>
-                  Get started
-                </Button>
-                <Button variant="default" radius="xl" size="md" className={classes.control}>
-                  Source code
-                </Button>
-              </Group>
             </div>
             <Image src={image.src} className={classes.image} />
           </div>

@@ -10,10 +10,11 @@ import {
     rem,
   } from '@mantine/core';
   import { IconGauge, IconUser, IconCookie } from '@tabler/icons-react';
+  import Link from 'next/link';
   
   const mockdata = [
     {
-      title: 'Extreme performance',
+      title: 'Medicare',
       description:
         'This dust is actually a powerful poison that will even make a pro wrestler sick, Regice cloaks itself with frigid air of -328 degrees Fahrenheit',
       icon: IconGauge,
@@ -98,10 +99,11 @@ import {
     const { classes, theme } = useStyles();
     const features = mockdata.map((feature) => (
       <Card key={feature.title} shadow="md" radius="md" className={classes.card} padding="xl">
-        <feature.icon size={rem(50)} stroke={2} color={theme.fn.primaryColor()} />
+        <Link href="/Medicare"><feature.icon size={rem(50)} stroke={2} color={theme.fn.primaryColor()} /> </Link>
         <Text fz="lg" fw={500} className={classes.cardTitle} mt="md">
           {feature.title}
         </Text>
+        
         <Text fz="sm" c="dimmed" mt="sm">
           {feature.description}
         </Text>

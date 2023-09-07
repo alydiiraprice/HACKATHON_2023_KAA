@@ -1,10 +1,9 @@
-import Module from '../components/MedicareModule'
-import { Center } from '@mantine/core';
+import {User} from '../components/UserData'
 
-export default function Journey() {
+export default function Profile() {
     return (
       <>
-      <Module />
+      <User />
        
       </>
     )

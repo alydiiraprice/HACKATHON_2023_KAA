@@ -1,6 +1,7 @@
 import { Center, createStyles, rem } from '@mantine/core';
 import { GoogleMap, Marker, useLoadScript } from "@react-google-maps/api";
 import { useMemo } from "react";
+import {STitle} from '../components/ServiceTitle'
 
 const useStyles = createStyles((theme) => ({
   map: {
@@ -10,7 +11,7 @@ const useStyles = createStyles((theme) => ({
   map_container: {
   height: 300,
   width: 800,
-  margin:150,
+  marginLeft:150,
 
 },
 
@@ -25,21 +26,20 @@ const Services = () => {
 
 
 return (
-  <div className={classes.map}>
+  <div><STitle />
+  <div className={classes.map}> 
     {!isLoaded ? (
       <h1>Loading...</h1>
     ) : (
-      <div>
 
       <GoogleMap
         mapContainerClassName={classes.map_container}
         center={centa}
         zoom={10}
       />
-      </div>
     )}
   </div>
-
+  </div>
 );
 };
 
