@@ -5,13 +5,8 @@ const fs = require('fs');
 
 let dataStore: data = {
   users: [],
-  channels: [],
-  messages: [],
-  tokens: [],
-  dms: [],
-  resetCodes: [],
-  removedUsers: [],
-  notifications: [],
+  badges: [],
+  userTypes: []
 };
 
 // Use get() to access the data
