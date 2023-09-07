@@ -42,7 +42,8 @@ export function authSignUp
   const task: task = {
     name: type,
     badge: {
-      name: type,
+      username: username,
+      type: type,
       category: 'empty'
     },
     pageURL: 'empty'
@@ -51,7 +52,7 @@ export function authSignUp
   // create userType obj
   const userType = {
     username: username,
-    name: type,
+    type: type,
     tasks: [task]
   };
 

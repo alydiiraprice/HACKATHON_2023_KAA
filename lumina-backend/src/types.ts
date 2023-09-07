@@ -25,9 +25,10 @@ export type user = {
 
 // Badge
 // name = user type
-// not sure about category
+// category = name
 export type badge = {
-  name: string,
+  username: string,
+  type: string,
   category: string
 };
 
@@ -35,7 +36,7 @@ export type badge = {
 // !! could consider removing tasks
 export type userType = {
   username: string,
-  name: string,
+  type: string,
   tasks: task[]
 };
 
