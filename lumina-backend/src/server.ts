@@ -8,6 +8,7 @@ import errorHandler from 'middleware-http-errors';
 import { getData, setData } from './dataStore';
 import { authLogin, authSignUp } from './auth';
 import { earnBadge, getCompletedTasks, completeTask, getIncompleteTasks } from './task';
+import { setMedicalInfo } from './medical';
 
 // write a const fs for data persistence
 const fs = require('fs');
@@ -58,6 +59,12 @@ app.post('/task/completetask', (req: Request, res: Response, next) => {
 app.get('/task/getincompletetasks', (req: Request, res: Response, next) => {
   const username = String(req.query.username as string);
   return res.json(getIncompleteTasks(username));
+});
+
+// setMedicalInfo
+app.post('/medical/setmedicalinfo', (req: Request, res: Response, next) => {
+  const { medicalDataType, username } = req.body;
+  return res.json(setMedicalInfo(medicalDataType, username));
 });
 
 // -----
