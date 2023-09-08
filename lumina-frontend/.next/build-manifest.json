@@ -32,10 +32,15 @@
       "static/chunks/main.js",
       "static/chunks/pages/home.js"
     ],
-    "/timeline": [
+    "/journey": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/timeline.js"
+      "static/chunks/pages/journey.js"
+    ],
+    "/services": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/services.js"
     ]
   },
   "ampFirstPages": []
