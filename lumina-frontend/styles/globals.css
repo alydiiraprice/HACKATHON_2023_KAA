@@ -105,3 +105,7 @@ a {
     color-scheme: dark;
   }
 }
+
+.timelineBtn {
+  padding: 10px;
+}
