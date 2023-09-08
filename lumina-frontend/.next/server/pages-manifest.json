@@ -3,7 +3,8 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/journey": "pages/journey.js",
+  "/home": "pages/home.js",
+  "/Medicare": "pages/Medicare.js",
   "/services": "pages/services.js",
-  "/profile": "pages/profile.js",
-  "/home": "pages/home.js"
+  "/profile": "pages/profile.js"
 }
