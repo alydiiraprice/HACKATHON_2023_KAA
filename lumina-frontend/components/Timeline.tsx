@@ -1,8 +1,19 @@
-import { Timeline, Text } from '@mantine/core';
+import { Timeline, Text, Button, createStyles,
+  rem, } from '@mantine/core';
 import { IconGitBranch, IconGitPullRequest, IconGitCommit, IconMessageDots } from '@tabler/icons-react';
 
+const useStyles = createStyles((theme) => ({
+  timelineBtn: {
+    bottom: 20
+  },
+}));
+
 export default function Time() {
+  const { classes, theme } = useStyles();
   return (
+    <div>
+    <Button className={classes.timelineBtn} component="a" href="/timeline">View Full Timeline</Button>
+  
     <Timeline active={1} bulletSize={24} lineWidth={2}>
       <Timeline.Item bullet={<IconGitBranch size={12} />} title="New branch">
         <Text color="dimmed" size="sm">You&apos;ve created new branch <Text variant="link" component="span" inherit>fix-notifications</Text> from master</Text>
@@ -23,6 +34,15 @@ export default function Time() {
         <Text color="dimmed" size="sm"><Text variant="link" component="span" inherit>Robert Gluesticker</Text> left a code review on your pull request</Text>
         <Text size="xs" mt={4}>12 minutes ago</Text>
       </Timeline.Item>
+      <Timeline.Item title="Code review" bullet={<IconMessageDots size={12} />}>
+        <Text color="dimmed" size="sm"><Text variant="link" component="span" inherit>Robert Gluesticker</Text> left a code review on your pull request</Text>
+        <Text size="xs" mt={4}>12 minutes ago</Text>
+      </Timeline.Item>
+      <Timeline.Item title="Code review" bullet={<IconMessageDots size={12} />}>
+        <Text color="dimmed" size="sm"><Text variant="link" component="span" inherit>Robert Gluesticker</Text> left a code review on your pull request</Text>
+        <Text size="xs" mt={4}>12 minutes ago</Text>
+      </Timeline.Item>
     </Timeline>
+    </div>
   );
 }

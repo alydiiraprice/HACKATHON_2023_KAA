@@ -4,10 +4,6 @@ import Time from '../components/Timeline'
 import { Flex, Center } from '@mantine/core';
 
 export default function Journey() {
-
-
-
-  
     return (
       <>
       <DashboardCard username={"Lisa"} />

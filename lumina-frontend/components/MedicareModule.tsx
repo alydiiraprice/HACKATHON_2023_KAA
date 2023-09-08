@@ -43,9 +43,10 @@ interface CardProps {
   title: string;
   category: string;
   text_content: string;
+  btnLink: string;
 }
 
-function Card({ title, category, text_content }: CardProps) {
+function Card({ title, category, text_content, btnLink }: CardProps) {
   const { classes } = useStyles();
 
   return (
@@ -67,7 +68,7 @@ function Card({ title, category, text_content }: CardProps) {
           {text_content}
         </Text>
       </div>
-      <Button variant="white" color="dark">
+      <Button variant="white" color="dark" component='a' href={btnLink}>
         Read more
       </Button>
     </Paper>
@@ -79,22 +80,26 @@ const data = [
     image: ' ',
     title: 'Who can enrol?',
     category: 'Enrolling in Medicare',
-    text_content:"Literally never",
+    text_content:"You can enrol in Medicare if you live in Australia and you’re any of these:",
+    btnLink:"https://www.servicesaustralia.gov.au/enrolling-medicare?context=60092#whocan"
   },
   {
     title: 'What do you need to enrol...',
     category: 'Enrolling in Medicare',
-    text_content:"Literally never",
+    text_content:"You need to give us different documents depending on your circumstances. Read about the documents you need if:",
+    btnLink:"https://www.servicesaustralia.gov.au/enrolling-medicare?context=60092#a2"
   },
   {
     title: 'How to enrol?',
     category: 'Enrolling in Medicare',
-    text_content:"Literally never",
+    text_content:"Enrol in Medicare by following these steps:",
+    btnLink:"https://www.servicesaustralia.gov.au/enrolling-medicare?context=60092#howtoenrol"
   },
   {
     title: 'When you will get a medicare card?',
     category: 'Enrolling in Medicare',
-    text_content:"Literally never",
+    text_content:"You’ll get a Medicare card number after you enrol in Medicare.",
+    btnLink:"https://www.servicesaustralia.gov.au/enrolling-medicare?context=60092#a4"
 
   },
 ];
