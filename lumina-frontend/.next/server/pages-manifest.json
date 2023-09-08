@@ -2,8 +2,15 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
+<<<<<<< HEAD
   "/journey": "pages/journey.js",
   "/Medicare": "pages/Medicare.js",
   "/services": "pages/services.js",
   "/home": "pages/home.js"
+=======
+  "/profile": "pages/profile.js",
+  "/home": "pages/home.js",
+  "/login": "pages/login.js",
+  "/timeline": "pages/timeline.js"
+>>>>>>> 4e0e6f92327e59fee2a7a9907ad273e085775ab1
 }

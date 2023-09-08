@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 self.__BUILD_MANIFEST = {__rewrites:{afterFiles:[],beforeFiles:[],fallback:[]},"/Medicare":["static\u002Fchunks\u002Fpages\u002FMedicare.js"],"/_error":["static\u002Fchunks\u002Fpages\u002F_error.js"],"/home":["static\u002Fchunks\u002Fpages\u002Fhome.js"],"/journey":["static\u002Fchunks\u002Fpages\u002Fjourney.js"],"/services":["static\u002Fchunks\u002Fpages\u002Fservices.js"],sortedPages:["\u002FMedicare","\u002F_app","\u002F_error","\u002Fhome","\u002Fjourney","\u002Fservices"]};self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB()
+=======
+self.__BUILD_MANIFEST = {__rewrites:{afterFiles:[],beforeFiles:[],fallback:[]},"/_error":["static\u002Fchunks\u002Fpages\u002F_error.js"],"/home":["static\u002Fchunks\u002Fpages\u002Fhome.js"],"/login":["static\u002Fchunks\u002Fpages\u002Flogin.js"],"/profile":["static\u002Fchunks\u002Fpages\u002Fprofile.js"],sortedPages:["\u002F_app","\u002F_error","\u002Fhome","\u002Flogin","\u002Fprofile"]};self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB()
+>>>>>>> 4e0e6f92327e59fee2a7a9907ad273e085775ab1
