@@ -4,19 +4,12 @@ import Link from 'next/link';
 import { useRouter } from 'next/router'
 import { createStyles, Navbar, Group, Code, getStylesRef, rem } from '@mantine/core';
 import {
-  IconBellRinging,
-  IconFingerprint,
-  IconKey,
-  IconSettings,
-  Icon2fa,
-  IconDatabaseImport,
-  IconReceipt2,
-  IconSwitchHorizontal,
   IconLogout,
   IconSmartHome,
   IconRoad,
   IconHeartHandshake,
-  IconUser
+  IconUser,
+  IconReport
 } from '@tabler/icons-react';
 
 const useStyles = createStyles((theme) => ({
@@ -81,6 +74,7 @@ const data = [
   { link: '/home', label: 'Home', icon: IconSmartHome },
   { link: '/journey', label: 'Journey', icon: IconRoad },
   { link: '/services', label: 'Services', icon: IconHeartHandshake },
+  { link: '/timeline', label: 'Timeline', icon: IconReport },
   { link: '/profile', label: 'Profile', icon: IconUser },
 ];
 

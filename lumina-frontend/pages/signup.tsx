@@ -1,9 +1,5 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
-import { NavbarSimple } from '@/components/Navbar'
-import { HeroTitle } from '@/components/Hero'
 import { SignupForm } from '@/components/SignupForm'
 
 const inter = Inter({ subsets: ['latin'] })
